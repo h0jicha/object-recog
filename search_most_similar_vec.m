@@ -1,5 +1,5 @@
 % vとの類似ベクトル検索をDBの各横ベクトルについて行い、最も類似するベクトルの情報を返す。
-function [simV, simIndex] = searchMostSimilarVec(DB, v)
+function [simV, simIndex] = search_most_similar_vec(DB, v)
     % DBの各横ベクトルとベクトルvとの各距離を、ベクトル化で求める
     n = size(DB, 1);
     A = DB;
