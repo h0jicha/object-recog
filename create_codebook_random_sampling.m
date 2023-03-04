@@ -1,14 +1,14 @@
 % 画像パス列から、それらの画像に対応するコードブックを作成します。
 % ただし、特徴点抽出はrandom samplingによります。
 % コードブックのサイズをnで指定します。
-function codebook = createCodebookByRandomSampling(filenames, n)
+function codebook = create_codebook_random_sampling(filenames, n)
     features = []; % 全画像のSURF特徴をまとめたもの
 
     % 各パスの画像に対して、SURF特徴を取り出し、それを連結していく
     fileNum = size(filenames, 1);
     for i = 1 : fileNum
         I = rgb2gray(imread(filenames{i}));
-        points = createRandomPoints(I, 1000); % random sampling
+        points = create_random_points(I, 1000); % random sampling
         [fts, ~] = extractFeatures(I,points);
         features = [features; fts];
     end

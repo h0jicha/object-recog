@@ -1,4 +1,4 @@
-function PT=createRandomPoints(I,num)
+function PT=create_random_points(I,num)
   [sy sx]=size(I);
   sz=[sx sy];
   for i=1:num
